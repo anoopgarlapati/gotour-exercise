@@ -124,11 +124,10 @@ func read(r io.Reader) {
 type MyReader struct{}
 
 func (r MyReader) Read(buffer []byte) (int, error) {
-	alloc := len(buffer)
-	for i := 0; i < alloc; i++ {
+	for i := range buffer {
 		buffer[i] = 'A'
 	}
-	return alloc, nil
+	return len(buffer), nil
 }
 
 type rot13Reader struct {
@@ -144,7 +143,7 @@ func (rot13 *rot13Reader) Read(buffer []byte) (alloc int, err error) {
 			buffer[i] = 'a' + ((buffer[i]-'a')+13)%26
 		}
 	}
-	return alloc, err
+	return
 }
 
 type Image struct{}

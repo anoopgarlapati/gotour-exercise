@@ -19,10 +19,10 @@ func main() {
 		fmt.Println(pos(i), neg(-2*i))
 	}
 
-	// Exercise: Fibonacci closure
-	fibo := fibonacci()
+	// Exercise: Pingala series / Fibonacci closure
+	ping := pingala()
 	for i := 0; i < 10; i++ {
-		fmt.Println(fibo())
+		fmt.Println(ping())
 	}
 }
 
@@ -38,7 +38,7 @@ func adder() func(int) int {
 	}
 }
 
-func fibonacci() func() int {
+func pingala() func() int {
 	curr, next := 0, 1
 	return func() int {
 		tmp := curr

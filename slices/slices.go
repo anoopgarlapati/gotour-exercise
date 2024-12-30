@@ -16,7 +16,7 @@ func main() {
 	primes23 := primes[0:2]
 	fmt.Println("First two primes are:", primes23)
 
-	// Slices refernce to arrays
+	// Slices reference to arrays
 	greek := [3]string{"Alpha", "Beta", "Gamma"}
 	fmt.Println("First three Greek alphabets in order", greek)
 	slice01 := greek[0:2]
